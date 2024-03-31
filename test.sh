@@ -21,7 +21,7 @@ NAME="$(basename "$FOLDER" )"
 # whisper "$FOLDER/audio.mp3" --language ja --model large --output_dir "$FOLDER"
 
 # Main Procedure
-stable-ts "$FOLDER/$NAME.mp3" --language ja --output_dir "$FOLDER/" --model large-v2 -o "$FOLDER/timings.ass" --overwrite
+stable-ts "$FOLDER/$NAME.mp3" --language en --output_dir "$FOLDER/" --model large-v2 -o "$FOLDER/timings.ass" --overwrite
 
 # ffmpeg -y -i "$FOLDER/timings.ass" "$FOLDER/timings.vtt"
 
