@@ -25,7 +25,7 @@ def generate_subs(files, model):
     for file in files:
         try:
             ext = 'srt'
-            lang_code = '.ja'
+            lang_code = '.en'
             sub_path = str(Path(file).with_suffix(lang_code))
             generate_transcript_from_audio(file, sub_path, model, ext)
         except Exception as err:
