@@ -26,7 +26,7 @@ def generate_transcript_from_audio(audio_file, full_timings_path, model, sub_for
         'language': 'en',
         'suppress_silence': True,
         # 'vad': True,
-        'regroup': False,
+        'regroup': True,
         'word_timestamps': True,
         'use_word_position': True,
         # 'only_voice_freq': True,
@@ -53,7 +53,7 @@ def align_text(model, working_folder, script_file, final):
                         #  use_word_position=True,
                         #  max_word_dur=60.0,
                         #  word_dur_factor=40.0,
-                        # vad=True,
+                         vad=True,
 
                          )
     # result = model.refine(audio_file, result, word_level=False)
