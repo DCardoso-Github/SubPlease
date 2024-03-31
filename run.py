@@ -23,10 +23,10 @@ def get_model(model_type='large-v2'):
 
 def generate_transcript_from_audio(audio_file, full_timings_path, model, sub_format='ass', **kwargs):
     default_args = {
-        'language': 'ja',
+        'language': 'en',
         'suppress_silence': True,
         # 'vad': True,
-        'regroup': True,
+        'regroup': False,
         'word_timestamps': True,
         'use_word_position': True,
         # 'only_voice_freq': True,
@@ -46,7 +46,7 @@ def align_text(model, working_folder, script_file, final):
     file_content = Path(script_file).read_text()
     audio_file = prep_audio(working_folder)
     result = model.align(audio_file, file_content,
-                         language="ja",
+                         language="en",
                          original_split=True,
                          prepend_punctuations='''「"'“¿([{-)''',
                          append_punctuations='''.。,，!！?？:：”)]}、)」''',
